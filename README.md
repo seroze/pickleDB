@@ -10,3 +10,8 @@ Limitations:
 
 - if there is power failure before the data is commited to disk then it can cause potential data loss  
 
+Disk format: 
+
+- The db supports bool, i16, i32, i64, float32, float64, string, bytes you have to model everything to these internally 
+
+- We id these as 0, 1, 2, ... and we store the id, key len, key, value len, value in this order so that when we are decoding from disk we can know which type and parse accordingly  
